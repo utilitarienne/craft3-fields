@@ -20,12 +20,9 @@ use craft\services\Plugins;
 use craft\web\UrlManager;
 use newism\fields\fields\Address as AddressField;
 use newism\fields\fields\Email as EmailField;
-use newism\fields\fields\Embed as EmbedField;
-use newism\fields\fields\Gender;
 use newism\fields\fields\PersonName as PersonNameField;
 use newism\fields\fields\Telephone as TelephoneField;
 use newism\fields\models\Settings;
-use newism\fields\services\Embed;
 use yii\base\Event;
 
 /**
@@ -83,15 +80,12 @@ class NsmFields extends Plugin
                 $event->types[] = TelephoneField::class;
                 $event->types[] = AddressField::class;
                 $event->types[] = EmailField::class;
-                $event->types[] = EmbedField::class;
                 $event->types[] = PersonNameField::class;
-                $event->types[] = Gender::class;
             }
         );
 
         $this->setComponents(
             [
-                'embed' => Embed::class,
             ]
         );
 
@@ -100,7 +94,6 @@ class NsmFields extends Plugin
             UrlManager::class,
             UrlManager::EVENT_REGISTER_CP_URL_RULES,
             static function (RegisterUrlRulesEvent $event) {
-                $event->rules['cpActionTrigger1'] = 'nsm-fields/embed/parse';
             }
         );
 
