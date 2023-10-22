@@ -1,6 +1,6 @@
 {
     "name": "newism/craft3-fields",
-    "description": "Address, telephone and email fields for CraftCMS 3.x",
+    "description": "Address, telephone and email fields for CraftCMS",
     "type": "craft-plugin",
     "keywords": [
         "craft",
@@ -25,7 +25,7 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.5",
+        "craftcms/cms": "^4.0.0",
         "giggsey/libphonenumber-for-php": "^8.3",
         "commerceguys/addressing": "^1.0",
         "nyholm/psr7": "^1.2",
@@ -42,7 +42,7 @@
         "schemaVersion": "1.0.0",
         "hasCpSettings": true,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/newism/craft3-fields/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/newism/craft-fields/master/CHANGELOG.md",
         "class": "newism\\fields\\NsmFields"
     }
 }
